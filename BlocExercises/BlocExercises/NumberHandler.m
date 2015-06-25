@@ -12,17 +12,22 @@
 
 - (NSNumber *) numberThatIsTwiceAsBigAsNumber:(NSNumber *)number {
     /* WORK HERE */
-    return @0;
+    return @([number intValue] * 2);
 }
 
 - (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @[];
+    NSMutableArray *numberArray = [NSMutableArray new];
+    while (number <= otherNumber) {
+        [numberArray addObject:[NSNumber numberWithInteger:number]];
+        number++;
+    }
+    return numberArray;
 }
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
     /* WORK HERE */
-    return 0;
+   return [[arrayOfNumbers valueForKeyPath:@"@min.self"] integerValue];
 }
 
 @end
