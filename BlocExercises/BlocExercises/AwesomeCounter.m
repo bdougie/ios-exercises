@@ -24,9 +24,6 @@
             range = [range stringByAppendingString:@(otherNumber).stringValue];
             ++otherNumber;
         }
-    } else {
-        range = @(number).stringValue;
-
     }
     return range;
 }

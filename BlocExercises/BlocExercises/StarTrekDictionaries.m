@@ -38,19 +38,12 @@
     [mutableCharacterDictionary removeObjectForKey:@"quote"];
     
     if (quote == nil) {
-//
-        // My first attempt is in quotes, not sure why it didn't work
-//
-//        quote = [@"A quote was not included." dataUsingEncoding:NSUTF8StringEncoding];
         [mutableCharacterDictionary setObject:@"A quote was not included." forKey:@"quote"];
     } else if ([quote isKindOfClass:[NSString class]]) {
-//        quote = [@"A quote was included, but it wasn't a string." dataUsingEncoding:NSUTF8StringEncoding];
         [mutableCharacterDictionary setObject:@"A quote was included, but it wasn't a string." forKey: @"quote"];
     } else if ([quote length] == 0) {
-//        quote = [@"A quote was included, but it was blank." dataUsingEncoding:NSUTF8StringEncoding];
         [mutableCharacterDictionary setObject:@"A quote was included, but it was blank." forKey:@"quote"];
     }
-//    [mutableCharacterDictionary setObject:quote forKey: @"quote"];
     
     return [NSDictionary dictionaryWithDictionary:mutableCharacterDictionary];
 }
